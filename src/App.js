@@ -1,26 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import "isomorphic-fetch"
+import Home from './components/Home';
+import Search from './components/Search';
+import Header from './components/Header';
+import Favorites from "./components/Favorites";
+import LinearProgressContainer from './components/LinearProgress';
+
 import './App.css';
+
+import reducer from './reducers';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import middleware from './middleware';
+
+const store = createStore(reducer, middleware);
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Provider store={store}>
+        <Router>
+          <div className="App">
+            <LinearProgressContainer />
+            <Header />
+            <Route path={'/'} exact component={Home}/>
+            <Route path={'/search'} component={Search}/>
+            <Route path={'/favorites'} component={Favorites}/>
+          </div>
+        </Router>
+      </Provider>
     );
   }
 }
