@@ -14,7 +14,7 @@ export default function catApiReducer (state = {
   snackBarMessage: '',
   categories: [],
   breeds: [],
-  category: 1,
+  category: '',
   breed: '',
   mime_types: '',
 }, action) {

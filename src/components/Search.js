@@ -53,7 +53,7 @@ export class Search extends React.Component {
   };
   resetAndGetCat = () => {
     const { dispatch } = this.props;
-    dispatch(updateCatAPIProperty('category', 0));
+    dispatch(updateCatAPIProperty('category', ''));
     dispatch(updateCatAPIProperty('breed', ''));
     dispatch(updateCatAPIProperty('mime_types', ''));
 
@@ -125,7 +125,6 @@ function mapStateToProps(state) {
 Search.propTypes = {
   imageObj: PropTypes.object,
   isLoading: PropTypes.bool,
-  category: PropTypes.number,
   breed: PropTypes.string,
   mime_types: PropTypes.string,
   dispatch: PropTypes.func,

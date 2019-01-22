@@ -122,7 +122,6 @@ function mapStateToProps(state) {
 CatOptions.propTypes = {
   categories: PropTypes.array,
   breeds: PropTypes.array,
-  category: PropTypes.number,
   breed: PropTypes.string,
   mime_types: PropTypes.string,
   dispatch: PropTypes.func,

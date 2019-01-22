@@ -12,7 +12,7 @@ describe('catApiReducer reducer', () => {
         snackBarMessage: '',
         categories: [],
         breeds: [],
-        category: 1,
+        category: '',
         breed: '',
         mime_types: '',
       }
@@ -34,7 +34,7 @@ describe('catApiReducer reducer', () => {
       snackBarMessage: '',
       categories: [],
       breeds: [],
-      category: 1,
+      category: '',
       breed: 'cat',
       mime_types: '',
     });
