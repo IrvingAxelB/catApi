@@ -21,7 +21,7 @@ const MIME_TYPES = [
   },
 ];
 
-class CatOptions extends React.Component {
+export class CatOptions extends React.Component {
   componentDidMount() {
     this.getBreeds();
     this.getCategories();

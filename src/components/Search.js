@@ -15,7 +15,7 @@ import {
 
 const SUB_ID = 'ven7qc';
 
-class Search extends React.Component {
+export class Search extends React.Component {
   componentDidMount() {
     this.getCatInfo()
   };
